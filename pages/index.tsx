@@ -1,16 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Fixtures from 'components/Fixtures.tsx'
+import Fixtures from '../components/Fixtures'
 
 const App = () => {
-
-
-
-  return (
-    
-      <Fixtures />
-   
-  )
+  return <Fixtures />
 }
 
 export default App
