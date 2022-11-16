@@ -1,0 +1,46 @@
+.fixtureContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 5px;
+}
+
+.fixtureRow {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   align-items: center;
+   margin-top: 20px;
+   border: 1px solid #a5acbb80;
+   padding: 20px 0;
+   background: linear-gradient(180deg,#fff 67.86%,#eef2fb);
+   border-radius: 0.5rem;
+   width: 100%;
+   max-width: 768px;
+}
+
+.fixtureTeam {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.flexEnd {
+    justify-content: flex-end;
+}
+
+.flexStart {
+    justify-content: flex-start;
+}
+
+.flexStart .fixtureLogo {
+    margin-right: 10px;
+}
+
+.flexEnd .fixtureLogo {
+    margin-left: 10px;
+}
+
+.fixtureTime {
+    margin: 0 20px;
+} 
