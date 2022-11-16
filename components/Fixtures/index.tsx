@@ -28,7 +28,7 @@ const Fixtures: FunctionComponent = () => {
         setFixtureData(data)
       })
       .catch((err) => console.error(err))
-  }, [])
+  })
   // const fixtureData = data
 
   //const dates = fixtureList.response.map((match) => match.fixture.date.slice(0, match.fixture.date.indexOf('T')))
