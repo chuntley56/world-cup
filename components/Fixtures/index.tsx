@@ -4,25 +4,14 @@ import data from '../../data/mock/response.json'
 import styles from './styles.module.css'
 import fetch, { RequestInit } from 'node-fetch'
 import { FixturesData } from '../../types'
+import { fetchData } from '../../utils/data'
 
 const Fixtures: FunctionComponent = () => {
   const [fixtureData, setFixtureData] = useState<FixturesData>()
   const [loaded, setLoaded] = useState(false)
 
-  const options: RequestInit = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': process.env.NEXT_PUBLIC_API_KEY ?? '',
-      'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
-    },
-  }
-
   useEffect(() => {
-    fetch(
-      'https://api-football-v1.p.rapidapi.com/v3/fixtures?league=1&season=2022',
-      options
-    )
-      .then((res) => res.json())
+    fetchData('GET', 'fixtures')
       .then((data: any) => {
         setLoaded(true)
         setFixtureData(data)
@@ -36,7 +25,6 @@ const Fixtures: FunctionComponent = () => {
   return !loaded ? (
     <p>loading...</p>
   ) : (
-    // return (
     <div className={styles.fixtureContainer}>
       <h1>Fixtures</h1>
       {fixtureData &&
