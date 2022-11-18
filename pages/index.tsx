@@ -1,9 +1,22 @@
-import Head from 'next/head'
-import Image from 'next/image'
+import React, { useEffect, useState } from 'react'
 import Fixtures from '../components/Fixtures'
+import { FixturesData } from '../types'
+import { fetchData } from '../utils/data'
 
-const App = () => {
-  return <Fixtures />
+const Home = () => {
+  const [fixtureData, setFixtureData] = useState<FixturesData>()
+  const [loaded, setLoaded] = useState(false)
+
+  useEffect(() => {
+    fetchData('GET', 'fixtures')
+      .then((data: any) => {
+        setLoaded(true)
+        setFixtureData(data.response)
+      })
+      .catch((err) => console.error(err))
+  }, [])
+
+  return <Fixtures loaded={loaded} fixtures={fixtureData} />
 }
 
-export default App
+export default Home
