@@ -1,0 +1,13 @@
+.dateContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    overflow: scroll;
+}
+
+.dateCard {
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #a5acbb80;
+    background: linear-gradient(180deg, #fff 67.86%, #eef2fb);
+}

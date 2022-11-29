@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useState } from 'react'
+import React, { FunctionComponent, useEffect, useState } from 'react'
 import Image from 'next/image'
 import data from '../../data/mock/response.json'
 import styles from './styles.module.css'
@@ -7,16 +7,20 @@ import { fetchData } from '../../utils/data'
 
 type FixturesType = {
   loaded: boolean
-  fixtures: FixturesData
+  fixtures?: FixturesData
 }
 
 const Fixtures: FunctionComponent<FixturesType> = ({ loaded, fixtures }) => {
   // const fixtureData = data
 
-  const dates = fixtures?.map((match) =>
-    match.fixture.date.slice(0, match.fixture.date.indexOf('T'))
-  )
-  console.log({ dates })
+  // const dates = fixtures?.map((match) =>
+  //   match.fixture.date.slice(0, match.fixture.date.indexOf('T'))
+  // )
+
+  // const uniqDates = [...new Set(dates)]
+  // const sorted = [...uniqDates].sort((a: any, b: any) => a - b)
+  // console.log({ dates, sorted })
+
   return !loaded ? (
     <p>loading...</p>
   ) : (
